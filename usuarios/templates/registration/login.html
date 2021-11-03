@@ -47,6 +47,7 @@
     
         <title>login e senha</title>
       </head>
+      <p> {% include 'usuarios/loginpartial.html' %}</p>
       
         <img src='{% static "img/img1.jpeg" %}' class="img-fluid" alt = "Imagem responsiva" id="imagem">
         <img src='{% static "img/logo1.jpeg" %}' class="rounded mx-auto d-block" alt="Imagem responsiva" id="logo">
@@ -64,15 +65,14 @@
                 {{ form|crispy }}
                 <br>
                 <button type="submit" class="btn btn-primary">Entrar</button>
-                {% if user.is_authenticated %}
-                <button type="submit" class="btn btn-primary" href="usuarios/logout">Sair</button>
-                {% endif %}
+                
                 {% if user.is_authenticated %}
     <p>Bem vindo, {{ user.username }}.</p>
 {% else %}
     <p>Bem vindo, acesse com seu loggin.</p>
 {% endif %}
             </form>
+            
         </div>
     
 </div>

@@ -6,6 +6,7 @@ urlpatterns = [
     template_name='usuarios/login.html',
     extra_context={'titulo': 'Autenticação do Condômino'}
 ), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(next_page='/'), name='logout'),
     
     path('usuarios/', include('django.contrib.auth.urls')),
 ]
